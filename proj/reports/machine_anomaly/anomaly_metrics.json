@@ -1,0 +1,13 @@
+{
+  "note": "OFFLINE evaluation only. Ground truth: test reference cycles (cooler_condition==100) = NORMAL; non-reference stable cycles (any other cooler_condition) = ABNORMAL. Labels were used only here, never during IsolationForest training or threshold selection.",
+  "accuracy": 0.995274102079395,
+  "precision": 0.9948186528497409,
+  "recall": 1.0,
+  "f1": 0.9974025974025974,
+  "true_positive": 960,
+  "false_positive": 5,
+  "false_negative": 0,
+  "true_negative": 93,
+  "n_test_reference_cycles": 98,
+  "n_non_reference_cycles": 960
+}

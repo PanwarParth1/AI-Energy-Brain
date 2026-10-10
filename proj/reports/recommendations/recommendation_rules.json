@@ -1,0 +1,66 @@
+{
+  "machine_health": {
+    "target": "cooler_condition",
+    "classes": [
+      3,
+      20,
+      100
+    ],
+    "class_names": [
+      "3 (close to total failure)",
+      "20 (reduced efficiency)",
+      "100 (full efficiency)"
+    ],
+    "model_type": "logistic_regression"
+  },
+  "machine_anomaly": {
+    "warning_threshold": 0.5167208459833922,
+    "anomaly_threshold": 0.5252332930701135,
+    "reference_condition": {
+      "cooler_condition": 100
+    },
+    "model_type": "isolation_forest"
+  },
+  "energy": {
+    "rolling_window_steps": 144,
+    "elevated_percentile": 90.0,
+    "high_percentile": 98.0,
+    "elevated_deviation_pct_threshold": 34.5287904638247,
+    "high_deviation_pct_threshold": 40.90299859623544,
+    "n_observations_used": 52272,
+    "methodology": "Percentiles of (actual - trailing 24h mean) / trailing 24h mean over the full real Tetouan history, computed with a strictly backward-looking rolling window (no future data)."
+  },
+  "persistence": {
+    "window": 10,
+    "moderate_count": 2,
+    "strong_count": 5
+  },
+  "machine_priority_bands": [
+    [
+      0,
+      0,
+      "NO_ACTION"
+    ],
+    [
+      1,
+      2,
+      "LOW"
+    ],
+    [
+      3,
+      4,
+      "MEDIUM"
+    ],
+    [
+      5,
+      5,
+      "HIGH"
+    ],
+    [
+      6,
+      6,
+      "CRITICAL"
+    ]
+  ],
+  "low_confidence_threshold": 0.6
+}

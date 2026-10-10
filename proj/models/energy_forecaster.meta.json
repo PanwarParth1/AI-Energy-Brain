@@ -1,0 +1,98 @@
+{
+  "model_type": "random_forest",
+  "target": "total_power_consumption",
+  "feature_columns": [
+    "hour",
+    "minute",
+    "day_of_week",
+    "day_of_month",
+    "month",
+    "day_of_year",
+    "is_weekend",
+    "lag_1",
+    "lag_6",
+    "lag_36",
+    "lag_144",
+    "rolling_mean_6",
+    "rolling_mean_144",
+    "rolling_std_6",
+    "temperature_lag_1",
+    "humidity_lag_1",
+    "wind_speed_lag_1",
+    "general_diffuse_flows_lag_1",
+    "diffuse_flows_lag_1"
+  ],
+  "forecast_horizon": "one_step_ahead (10 minutes)",
+  "train_rows": 36547,
+  "validation_rows": 7862,
+  "test_rows": 7863,
+  "train_range": [
+    "2017-01-02 00:00:00",
+    "2017-09-12 19:00:00"
+  ],
+  "validation_range": [
+    "2017-09-12 19:10:00",
+    "2017-11-06 09:20:00"
+  ],
+  "test_range": [
+    "2017-11-06 09:30:00",
+    "2017-12-30 23:50:00"
+  ],
+  "random_state": 42,
+  "sklearn_version": "1.8.0",
+  "python_version": "3.12.3",
+  "validation_metrics": {
+    "baseline_persistence": {
+      "mae": 796.6684569076571,
+      "rmse": 1205.3160159099787,
+      "r2": 0.9919816520132563
+    },
+    "linear_regression": {
+      "mae": 451.0509651874581,
+      "rmse": 687.3390840928075,
+      "r2": 0.9973924951486254
+    },
+    "random_forest": {
+      "mae": 388.94479108151694,
+      "rmse": 549.636626751701,
+      "r2": 0.9983326208112654
+    }
+  },
+  "selected_model": "random_forest",
+  "test_metrics": {
+    "baseline_persistence": {
+      "mae": 786.3480144962482,
+      "rmse": 1177.628784166537,
+      "r2": 0.9931622536177607
+    },
+    "selected_model": {
+      "mae": 473.1210812900226,
+      "rmse": 707.141534436037,
+      "r2": 0.9975344781434907
+    }
+  },
+  "feature_importance": {
+    "lag_1": 0.9933734553102657,
+    "lag_144": 0.0021881735420999364,
+    "lag_6": 0.0009520697158203813,
+    "rolling_mean_6": 0.0009364499515222274,
+    "general_diffuse_flows_lag_1": 0.0007204529089966396,
+    "rolling_std_6": 0.0004386936640500574,
+    "hour": 0.00036713462725733063,
+    "diffuse_flows_lag_1": 0.0002684607121781686,
+    "lag_36": 0.00026189189137194104,
+    "rolling_mean_144": 0.00019486395248319958,
+    "day_of_year": 0.0001007770408479456,
+    "temperature_lag_1": 4.3750047179524664e-05,
+    "humidity_lag_1": 3.5877621624172244e-05,
+    "wind_speed_lag_1": 3.221547896845165e-05,
+    "day_of_month": 2.8389064884481443e-05,
+    "minute": 2.5206003099402095e-05,
+    "day_of_week": 2.2595002686819225e-05,
+    "month": 6.425121490823969e-06,
+    "is_weekend": 3.118343172895097e-06
+  },
+  "data_source": "real",
+  "dataset": "UCI Tetouan City Power Consumption",
+  "notes": "total_power_consumption is the sum of three Tetouan city consumption zones, not three machines. This model forecasts aggregate city-level power consumption one 10-minute step ahead; it does not predict industrial machine behaviour."
+}

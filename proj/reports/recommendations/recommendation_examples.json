@@ -1,0 +1,350 @@
+{
+  "reference_normal": {
+    "cycle_index": 1714,
+    "recommendations": [
+      {
+        "recommendation_id": "REC-MACHINE-1714-0",
+        "category": "PREVENTIVE_MAINTENANCE",
+        "priority": "LOW",
+        "title": "Borderline sensor deviation detected",
+        "action": "Inspect flow path, pump and valve operation; motor and drive system.",
+        "reason": "Sensor behaviour is at the edge of the reference range and/or has recurred across recent cycles.",
+        "evidence": [
+          {
+            "signal": "anomaly_score",
+            "observation": "status=NORMAL",
+            "severity": "low",
+            "source": "isolation_forest"
+          },
+          {
+            "signal": "FS2_rms",
+            "observation": "z=+2.58 vs reference",
+            "severity": "moderate",
+            "source": "isolation_forest"
+          },
+          {
+            "signal": "FS2_mean",
+            "observation": "z=+2.58 vs reference",
+            "severity": "moderate",
+            "source": "isolation_forest"
+          },
+          {
+            "signal": "FS2_max",
+            "observation": "z=+2.33 vs reference",
+            "severity": "moderate",
+            "source": "isolation_forest"
+          },
+          {
+            "signal": "cooler_condition",
+            "observation": "full efficiency",
+            "severity": "low",
+            "source": "logistic_regression"
+          },
+          {
+            "signal": "anomaly_persistence",
+            "observation": "2/10 recent cycles flagged",
+            "severity": "moderate",
+            "source": "hydraulic_anomaly_scores_history"
+          }
+        ],
+        "confidence": 1.0,
+        "confidence_basis": "Rule confidence: proportion of maximum supporting evidence strength present (6 evidence item(s)). NOT a statistical probability that this recommendation is correct.",
+        "machine_id": "hydraulic_test_rig",
+        "cycle_index": 1714,
+        "energy_datetime": null,
+        "source_models": [
+          "logistic_regression",
+          "isolation_forest"
+        ],
+        "limitations": [
+          "Predicted condition and anomaly status are statistical associations learned from a controlled experimental dataset, not confirmed physical diagnoses.",
+          "This is decision support only and does not replace qualified maintenance inspection."
+        ],
+        "generated_at": "2026-09-21T07:59:36"
+      }
+    ]
+  },
+  "early_anomaly_low_persistence": {
+    "cycle_index": 0,
+    "recommendations": [
+      {
+        "recommendation_id": "REC-MACHINE-0-0",
+        "category": "MACHINE_INSPECTION",
+        "priority": "MEDIUM",
+        "title": "Degraded machine condition",
+        "action": "Inspect hydraulic pressure lines and pump; flow path, pump and valve operation; cooling system and thermal load.",
+        "reason": "Machine-condition classification indicates: reduced efficiency.",
+        "evidence": [
+          {
+            "signal": "anomaly_score",
+            "observation": "status=ANOMALY",
+            "severity": "high",
+            "source": "isolation_forest"
+          },
+          {
+            "signal": "PS6_std",
+            "observation": "z=+128.18 vs reference",
+            "severity": "high",
+            "source": "isolation_forest"
+          },
+          {
+            "signal": "PS5_std",
+            "observation": "z=+122.34 vs reference",
+            "severity": "high",
+            "source": "isolation_forest"
+          },
+          {
+            "signal": "FS2_std",
+            "observation": "z=+120.25 vs reference",
+            "severity": "high",
+            "source": "isolation_forest"
+          },
+          {
+            "signal": "cooler_condition",
+            "observation": "reduced efficiency",
+            "severity": "moderate",
+            "source": "logistic_regression"
+          }
+        ],
+        "confidence": 1.0,
+        "confidence_basis": "Rule confidence: proportion of maximum supporting evidence strength present (5 evidence item(s)). NOT a statistical probability that this recommendation is correct.",
+        "machine_id": "hydraulic_test_rig",
+        "cycle_index": 0,
+        "energy_datetime": null,
+        "source_models": [
+          "logistic_regression",
+          "isolation_forest"
+        ],
+        "limitations": [
+          "Predicted condition and anomaly status are statistical associations learned from a controlled experimental dataset, not confirmed physical diagnoses.",
+          "This is decision support only and does not replace qualified maintenance inspection."
+        ],
+        "generated_at": "2026-09-21T07:59:45"
+      }
+    ]
+  },
+  "persistent_anomaly": {
+    "cycle_index": 301,
+    "recommendations": [
+      {
+        "recommendation_id": "REC-MACHINE-301-0",
+        "category": "MACHINE_INSPECTION",
+        "priority": "CRITICAL",
+        "title": "Degraded machine condition with abnormal sensor behaviour",
+        "action": "Inspect cooling system and coolant flow; cooling system and thermal load.",
+        "reason": "Known degraded machine condition is accompanied by abnormal sensor behaviour relative to the learned reference population.",
+        "evidence": [
+          {
+            "signal": "anomaly_score",
+            "observation": "status=ANOMALY",
+            "severity": "high",
+            "source": "isolation_forest"
+          },
+          {
+            "signal": "CE_rms",
+            "observation": "z=-72.14 vs reference",
+            "severity": "high",
+            "source": "isolation_forest"
+          },
+          {
+            "signal": "CE_mean",
+            "observation": "z=-72.13 vs reference",
+            "severity": "high",
+            "source": "isolation_forest"
+          },
+          {
+            "signal": "CE_max",
+            "observation": "z=-67.90 vs reference",
+            "severity": "high",
+            "source": "isolation_forest"
+          },
+          {
+            "signal": "cooler_condition",
+            "observation": "close to total failure",
+            "severity": "high",
+            "source": "logistic_regression"
+          },
+          {
+            "signal": "anomaly_persistence",
+            "observation": "10/10 recent cycles flagged",
+            "severity": "high",
+            "source": "hydraulic_anomaly_scores_history"
+          }
+        ],
+        "confidence": 1.0,
+        "confidence_basis": "Rule confidence: proportion of maximum supporting evidence strength present (6 evidence item(s)). NOT a statistical probability that this recommendation is correct.",
+        "machine_id": "hydraulic_test_rig",
+        "cycle_index": 301,
+        "energy_datetime": null,
+        "source_models": [
+          "logistic_regression",
+          "isolation_forest"
+        ],
+        "limitations": [
+          "Predicted condition and anomaly status are statistical associations learned from a controlled experimental dataset, not confirmed physical diagnoses.",
+          "This is decision support only and does not replace qualified maintenance inspection."
+        ],
+        "generated_at": "2026-09-21T07:59:55"
+      }
+    ]
+  },
+  "cross_track_example": {
+    "cycle_index": 301,
+    "energy_datetime": "2017-01-02 17:50:00",
+    "note": "Machine cycle paired with a REAL, independently-verified elevated energy observation (from actual history, not the arbitrary 'latest' row) to genuinely exercise the cross-track rule - see engine.py's cross-track honesty note: the two datasets remain unrelated in origin.",
+    "recommendations": [
+      {
+        "recommendation_id": "REC-MACHINE-301-0",
+        "category": "MACHINE_INSPECTION",
+        "priority": "CRITICAL",
+        "title": "Degraded machine condition with abnormal sensor behaviour",
+        "action": "Inspect cooling system and coolant flow; cooling system and thermal load.",
+        "reason": "Known degraded machine condition is accompanied by abnormal sensor behaviour relative to the learned reference population.",
+        "evidence": [
+          {
+            "signal": "anomaly_score",
+            "observation": "status=ANOMALY",
+            "severity": "high",
+            "source": "isolation_forest"
+          },
+          {
+            "signal": "CE_rms",
+            "observation": "z=-72.14 vs reference",
+            "severity": "high",
+            "source": "isolation_forest"
+          },
+          {
+            "signal": "CE_mean",
+            "observation": "z=-72.13 vs reference",
+            "severity": "high",
+            "source": "isolation_forest"
+          },
+          {
+            "signal": "CE_max",
+            "observation": "z=-67.90 vs reference",
+            "severity": "high",
+            "source": "isolation_forest"
+          },
+          {
+            "signal": "cooler_condition",
+            "observation": "close to total failure",
+            "severity": "high",
+            "source": "logistic_regression"
+          },
+          {
+            "signal": "anomaly_persistence",
+            "observation": "10/10 recent cycles flagged",
+            "severity": "high",
+            "source": "hydraulic_anomaly_scores_history"
+          }
+        ],
+        "confidence": 1.0,
+        "confidence_basis": "Rule confidence: proportion of maximum supporting evidence strength present (6 evidence item(s)). NOT a statistical probability that this recommendation is correct.",
+        "machine_id": "hydraulic_test_rig",
+        "cycle_index": 301,
+        "energy_datetime": null,
+        "source_models": [
+          "logistic_regression",
+          "isolation_forest"
+        ],
+        "limitations": [
+          "Predicted condition and anomaly status are statistical associations learned from a controlled experimental dataset, not confirmed physical diagnoses.",
+          "This is decision support only and does not replace qualified maintenance inspection."
+        ],
+        "generated_at": "2026-09-21T08:00:04"
+      },
+      {
+        "recommendation_id": "REC-ENERGY-0",
+        "category": "ENERGY_OPTIMIZATION",
+        "priority": "HIGH",
+        "title": "Energy demand substantially above recent pattern",
+        "action": "Review the current/upcoming high-demand period and operating schedule for avoidable load.",
+        "reason": "Consumption is +42.9% above the trailing 24-hour reference mean, above the 40.9% historical 98th-percentile threshold.",
+        "evidence": [
+          {
+            "signal": "total_power_consumption",
+            "observation": "+42.9% vs trailing 24h mean",
+            "severity": "high",
+            "source": "random_forest"
+          }
+        ],
+        "confidence": 0.7,
+        "confidence_basis": "Rule confidence based on how far the observed deviation exceeds its historical percentile threshold. NOT a statistical probability that this recommendation is correct.",
+        "machine_id": "tetouan_city_energy_zone_aggregate",
+        "cycle_index": null,
+        "energy_datetime": "2017-01-02 17:50:00",
+        "source_models": [
+          "random_forest"
+        ],
+        "limitations": [
+          "This dataset is public city-level power consumption, not industrial machine energy data - this recommendation concerns aggregate demand, not a specific machine's efficiency.",
+          "Elevated demand is a pattern deviation, not confirmed avoidable waste."
+        ],
+        "generated_at": "2026-09-21T08:00:05"
+      },
+      {
+        "recommendation_id": "REC-CROSS-301",
+        "category": "MACHINE_INSPECTION",
+        "priority": "CRITICAL",
+        "title": "Coinciding abnormal machine and energy signals",
+        "action": "Investigate the machine's operating condition and the concurrent elevated energy demand together.",
+        "reason": "Both the machine track and the energy track independently indicate abnormal behaviour. Coinciding abnormal machine and energy signals warrant investigation; this does not establish that one caused the other.",
+        "evidence": [
+          {
+            "signal": "machine_track",
+            "observation": "Degraded machine condition with abnormal sensor behaviour",
+            "severity": "high",
+            "source": "machine_rules"
+          },
+          {
+            "signal": "energy_track",
+            "observation": "Energy demand substantially above recent pattern",
+            "severity": "high",
+            "source": "energy_rules"
+          }
+        ],
+        "confidence": 0.85,
+        "confidence_basis": "Rule confidence combining both tracks' individual rule confidences. NOT a statistical probability.",
+        "machine_id": "hydraulic_test_rig",
+        "cycle_index": 301,
+        "energy_datetime": "2017-01-02 17:50:00",
+        "source_models": [
+          "isolation_forest",
+          "random_forest",
+          "logistic_regression"
+        ],
+        "limitations": [
+          "Predicted condition and anomaly status are statistical associations learned from a controlled experimental dataset, not confirmed physical diagnoses.",
+          "This is decision support only and does not replace qualified maintenance inspection.",
+          "This dataset is public city-level power consumption, not industrial machine energy data - this recommendation concerns aggregate demand, not a specific machine's efficiency.",
+          "Elevated demand is a pattern deviation, not confirmed avoidable waste.",
+          "CROSS-TRACK CAVEAT: the machine (hydraulic test rig) and energy (Tetouan city) datasets are independent and do not share a real timeline or facility. This combined recommendation demonstrates the engine's cross-track logic using two real but unrelated observations, not a genuine correlated event."
+        ],
+        "generated_at": "2026-09-21T08:00:05"
+      }
+    ]
+  },
+  "energy_only_latest": {
+    "recommendations": [
+      {
+        "recommendation_id": "REC-MONITOR-NA",
+        "category": "CONTINUE_MONITORING",
+        "priority": "INFO",
+        "title": "Machine and/or energy behaviour within reference range",
+        "action": "Continue normal monitoring.",
+        "reason": "No significant anomaly, degraded-condition, or elevated-energy signal detected.",
+        "evidence": [],
+        "confidence": 1.0,
+        "confidence_basis": "No supporting evidence was found for an elevated recommendation; this is the deterministic default state.",
+        "machine_id": "hydraulic_test_rig",
+        "cycle_index": null,
+        "energy_datetime": "2017-12-30T23:50:00",
+        "source_models": [],
+        "limitations": [
+          "This is decision support only and does not replace qualified maintenance or engineering inspection."
+        ],
+        "generated_at": "2026-09-21T08:00:05"
+      }
+    ]
+  }
+}

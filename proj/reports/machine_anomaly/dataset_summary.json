@@ -1,0 +1,9 @@
+{
+  "n_total_cycles": 2205,
+  "n_stable_cycles": 1449,
+  "n_reference_cycles_stable": 489,
+  "n_non_reference_stable": 960,
+  "reference_condition": {
+    "cooler_condition": 100
+  }
+}

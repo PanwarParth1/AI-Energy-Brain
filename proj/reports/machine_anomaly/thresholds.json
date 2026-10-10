@@ -1,0 +1,6 @@
+{
+  "warning_threshold": 0.5167208459833922,
+  "anomaly_threshold": 0.5252332930701135,
+  "warning_percentile": 95.0,
+  "anomaly_percentile": 99.0
+}

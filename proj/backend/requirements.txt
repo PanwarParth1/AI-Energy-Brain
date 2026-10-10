@@ -1,0 +1,18 @@
+# Versions pinned to the ones the project was tested with.
+# scikit-learn MUST stay 1.8.0: the saved models in models/ were trained with it,
+# and loading them with a different scikit-learn version is not guaranteed to work.
+
+# --- API ---
+fastapi==0.142.4
+uvicorn[standard]==0.54.0
+pydantic==2.13.5
+
+# --- ML stack ---
+numpy==2.4.4
+pandas==3.0.2
+scikit-learn==1.8.0
+joblib==1.5.3
+
+# --- analysis / plotting (matplotlib is imported by the backend; seaborn by ml/ scripts) ---
+matplotlib==3.10.8
+seaborn==0.13.2
